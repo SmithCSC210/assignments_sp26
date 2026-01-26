@@ -15,7 +15,7 @@ _____ 1 pt: ListADT includes Javadoc describing its purpose
 
 _____ 1 pt: Javadoc specifies assumptions about how ListADT object is created
 
-_____ 1 pt: Correct call signatures for all the necessary ListADT methods
+_____ 1 pt: Correct call signatures for all required ListADT methods
 
 _____ 1 pt: Javadoc included for all ListADT methods describes what they do and any restrictions on their use
 
