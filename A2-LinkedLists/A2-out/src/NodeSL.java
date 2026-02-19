@@ -1,12 +1,19 @@
-  /** Nested class to keep track of nodes */
-  public class NodeSL<T> {
+/**
+ * Node class for a singly linked list.
+ */
+public class NodeSL<T> {
       /** The data at the node */
       private T data;
       
       /** Link to the next node */
       private NodeSL<T> next;
 
-      /** A constructor */
+      /**
+       * Constructs a node with the given data and next reference.
+       *
+       * @param data data to store in this node
+       * @param next next node (or null)
+       */
       NodeSL(T data, NodeSL<T> next) {
           this.data = data;
           this.next = next;
@@ -17,9 +24,9 @@
         return data;
       }
 
-      /** @param d new data vaue */
-      public void setData(T d) {
-        this.data = d;
+      /** @param data new data value */
+      public void setData(T data) {
+        this.data = data;
       }
 
       /** @return next node */
@@ -27,8 +34,8 @@
         return next;
       }
 
-      /** @param d new next node */
+      /** @param next new next node */
       public void setNext(NodeSL<T> next) {
         this.next = next;
       }
-    }
+}

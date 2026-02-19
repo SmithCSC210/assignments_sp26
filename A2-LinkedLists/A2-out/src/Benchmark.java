@@ -1,14 +1,37 @@
 import java.lang.reflect.Method;
 
+/**
+ * Simple benchmarking harness to compare index-based and node-based operations
+ * on a singly linked list.
+ */
 public class Benchmark {
-    private static final int[] SIZES = {1000, 5000, 20000};
-    private static final int REPS = 200;
+    private static final int[] SIZES = {10000, 50000, 200000};
+    private static final int REPS = 500;
+    private static final int TRIALS = 1;
 
+    /**
+     * Runs the benchmark and prints timing results to stdout.
+     *
+     * @param args ignored
+     */
     public static void main(String[] args) {
         System.out.println("Linked List Benchmark: Node-Based vs Index-Based");
         System.out.println("Each timing is an average over " + REPS + " add+remove pairs.\n");
+        System.out.println("Note: sub-100 ns timings are noisy; focus on overall trends.\n");
+
+        // One dry run to warm up the JVM/JIT
+        runOnce(2000, 50, 1, false);
 
         for (int n : SIZES) {
+            runOnce(n, REPS, TRIALS, true);
+        }
+    }
+
+    private static void runOnce(int n, int reps, int trials, boolean print) {
+        long[] nodeSamples = new long[trials];
+        long[] indexSamples = new long[trials];
+
+        for (int t = 0; t < trials; t++) {
             SLL<Integer> list = buildList(n);
             int midIndex = n / 2;
             NodeSL<Integer> midNode = nodeAt(list, midIndex);
@@ -16,27 +39,58 @@ public class Benchmark {
             Method addIndex = findAddIndexMethod(list);
 
             // Warmup
-            runNodePair(list, midNode, 10);
+            runNodePair(list, midNode, 50);
             if (addIndex != null) {
-                runIndexPair(list, addIndex, midIndex + 1, 10);
+                runIndexPair(list, addIndex, midIndex, 50);
             }
 
-            long nodeNs = timeNodePair(list, midNode, REPS);
-            String nodeMsg = String.format("node addAfter/removeAfter: %s ns/op", fmt(nodeNs));
+            nodeSamples[t] = timeNodePair(list, midNode, reps);
 
-            String indexMsg;
             if (addIndex != null) {
-                long idxNs = timeIndexPair(list, addIndex, midIndex + 1, REPS);
-                indexMsg = String.format("index add/remove: %s ns/op", fmt(idxNs));
+                try {
+                    indexSamples[t] = timeIndexPair(list, addIndex, midIndex, reps);
+                } catch (RuntimeException e) {
+                    indexSamples[t] = -1;
+                }
             } else {
-                indexMsg = "index add/remove: N/A (no add(int, T) found)";
+                indexSamples[t] = -1;
             }
+        }
 
+        long nodeNs = medianPositive(nodeSamples);
+        long indexNs = medianPositive(indexSamples);
+
+        String nodeMsg = (nodeNs < 0) ? "node addAfter/removeAfter: ERROR" :
+                String.format("node addAfter/removeAfter: %s ns/op", fmt(nodeNs));
+
+        String indexMsg = (indexNs < 0) ? "index add/remove: ERROR" :
+                String.format("index add/remove: %s ns/op", fmt(indexNs));
+
+        if (print) {
             System.out.println("n = " + n);
             System.out.println("  " + nodeMsg);
             System.out.println("  " + indexMsg);
             System.out.println();
         }
+    }
+
+    private static long medianPositive(long[] values) {
+        long[] copy = values.clone();
+        java.util.Arrays.sort(copy);
+        int count = 0;
+        for (long v : copy) {
+            if (v >= 0) count++;
+        }
+        if (count == 0) return -1;
+        int mid = count / 2;
+        int idx = 0;
+        for (long v : copy) {
+            if (v >= 0) {
+                if (idx == mid) return v;
+                idx++;
+            }
+        }
+        return -1;
     }
 
     private static SLL<Integer> buildList(int n) {

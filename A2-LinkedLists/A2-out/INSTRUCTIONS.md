@@ -119,7 +119,7 @@ We have provided a `Benchmark.java` file that compares **node-based** operations
 
 To run it from the command line (MacOS / Linux / Windows):
 ```
-javac *.java
+javac $(ls *.java | grep -v 'Test\.java$')
 java Benchmark
 ```
 
