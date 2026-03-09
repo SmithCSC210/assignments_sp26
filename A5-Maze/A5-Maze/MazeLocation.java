@@ -110,9 +110,9 @@ public class MazeLocation {
   /**
     *  Converts the coordinate to a string representation
     *
-    *  @return A string representation:  (row,col)
+    *  @return A string representation:  (row, col)
     */
   public String toString() {
-    return "("+row+","+col+")";
+    return "("+row+", "+col+")";
   }
 }

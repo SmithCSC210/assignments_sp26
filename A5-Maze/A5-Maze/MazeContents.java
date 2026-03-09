@@ -7,11 +7,11 @@ import java.awt.Color;
  *  @version CSC 212, October 2021
  */
 public enum MazeContents {
-  WALL (false,Color.black),
-  OPEN (true,Color.white),
-  VISITED (false,new Color(200,255,200)),
-  DEAD_END (false,new Color(255,200,200)),
-  PATH (true,Color.green.darker());
+  WALL (false, Color.black),
+  OPEN (true, Color.white),
+  VISITED (false, new Color(200, 255, 200)),
+  DEAD_END (false, new Color(255, 200, 200)),
+  PATH (true, Color.green.darker());
 
   /** Can we visit this square? */
   public final boolean isExplorable;

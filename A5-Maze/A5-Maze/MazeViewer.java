@@ -23,21 +23,21 @@ public class MazeViewer extends JComponent implements ActionListener {
   /** Window the maze will appear in */
   private JFrame frame;
 
-	/** TImer for callbacks */
-	private Timer timer;
+    /** TImer for callbacks */
+    private Timer timer;
 
-	/** Creates a viewer to display the specified maze */
-	public MazeViewer(DisplayableMaze maze) {
-		super();
-		this.maze = maze;
-		frame = null;  // not displayed yet
-		setPreferredSize(new Dimension(BLOCK*maze.getWidth(),BLOCK*maze.getHeight()));
-		setMinimumSize(new Dimension(BLOCK*maze.getWidth(),BLOCK*maze.getHeight()));
+    /** Creates a viewer to display the specified maze */
+    public MazeViewer(DisplayableMaze maze) {
+        super();
+        this.maze = maze;
+        frame = null;  // not displayed yet
+        setPreferredSize(new Dimension(BLOCK*maze.getWidth(), BLOCK*maze.getHeight()));
+        setMinimumSize(new Dimension(BLOCK*maze.getWidth(), BLOCK*maze.getHeight()));
     System.out.println("Displaying "+maze.getHeight()+"x"+maze.getWidth()+" maze...");
-		openWindow();
-	}
+        openWindow();
+    }
 
-	/** Sets up the GUI window */
+    /** Sets up the GUI window */
   private void openWindow() {
     // Make sure we have nice window decorations.
     JFrame.setDefaultLookAndFeelDecorated(true);
@@ -69,35 +69,35 @@ public class MazeViewer extends JComponent implements ActionListener {
     for (int i = 0; i < maze.getHeight(); i++) {
       for (int j = 0; j < maze.getWidth(); j++) {
         try {
-          g.setColor(maze.getContents(i,j).color);
+          g.setColor(maze.getContents(i, j).color);
         } catch (NullPointerException e) {
           System.err.println("Maze contents not properly specified.");
           g.setColor(Color.RED);
         }
-        g.fillRect(BLOCK*j,BLOCK*i,BLOCK,BLOCK);
+        g.fillRect(BLOCK*j, BLOCK*i, BLOCK, BLOCK);
       }
     }
     g.setColor(Color.blue);
     MazeLocation start = maze.getStart();
     MazeLocation finish = maze.getFinish();
     try {
-      g.drawRect(BLOCK*start.getCol()+2,BLOCK*start.getRow()+2,
-        BLOCK-4,BLOCK-4);
+      g.drawRect(BLOCK*start.getCol()+2, BLOCK*start.getRow()+2,
+        BLOCK-4, BLOCK-4);
     } catch (NullPointerException e) {
       System.err.println("Maze start not properly specified.");
     }
     try {
-      g.drawOval(BLOCK*finish.getCol()+1,BLOCK*finish.getRow()+1,
-        BLOCK-3,BLOCK-3);
-      g.drawOval(BLOCK*finish.getCol()+3,BLOCK*finish.getRow()+3,
-        BLOCK-7,BLOCK-7);
+      g.drawOval(BLOCK*finish.getCol()+1, BLOCK*finish.getRow()+1,
+        BLOCK-3, BLOCK-3);
+      g.drawOval(BLOCK*finish.getCol()+3, BLOCK*finish.getRow()+3,
+        BLOCK-7, BLOCK-7);
     } catch (NullPointerException e) {
       System.err.println("Maze finish not properly specified.");
     }
   }
 
-	/** Timer callback causes the window to be repainted */
-	public void actionPerformed(ActionEvent e) {
-		repaint();
-	}
+    /** Timer callback causes the window to be repainted */
+    public void actionPerformed(ActionEvent e) {
+        repaint();
+    }
 }
