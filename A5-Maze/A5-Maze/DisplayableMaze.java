@@ -15,7 +15,7 @@ public interface DisplayableMaze {
     public MazeContents getContents(int i, int j);
 
     /** @return true if the maze grid is explorable at row i, column j */
-    public Boolean isExplorable(int i, int j);
+    public boolean isExplorable(int i, int j);
 
     /** @return location of maze start point */
     public MazeLocation getStart();
