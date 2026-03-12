@@ -1,22 +1,30 @@
-# A7 Card Sorting
-
-Your readme should include the following information. Each student needs to submit all of this information themselves, even when pair programming. 
+# A6 Card Sorting
+CSC 210: Data Structures
 
 ## General Information
-Programming Partner Name (if you'd like to be graded together):
 
-Other Collaborators (and kudos to helpful members of the class):
+Your readme should include the following information.
 
-Any references used besides JavaDoc and course materials:
+Your name:
 
-## Assignment Reflection
+Other collaborators: 
+
+Was anyone particularly helpful? Give them a shout-out here:
+
+## References
+
+References used (besides JavaDoc and course materials):
+
+If you used AI at all for this assignment: How did you use it? What did this experience teach you?
+
+## Reflection Questions
 
 What did you notice about the differences in runtime across algorithms as you changed the number of cards you were sorting? If you had to split them into "slower" algorithms vs "faster" algorithms, which would you put in each category?
 
 After implementing these algorithms with linked-list-style operations, which methods would have benefited most from using `ArrayList` instead of `LinkedList`, and why? Which methods do you think were a better fit for linked lists?
 
-Why is binary search a poor fit for a linked list, even though binary search is very fast on arrays?
+Why didn't we implement binary search for this assignment?
 
-If you reused the same sorting code for both the visual and timing versions, how did you structure that code? If you did not, what duplication did you end up with and what would you refactor next?
+## Reflection
 
-Please reflect on your experience with this assignment. What was most challenging? What was most interesting?
+What was your overall experience with this assignment? What was most challenging? What was most interesting?

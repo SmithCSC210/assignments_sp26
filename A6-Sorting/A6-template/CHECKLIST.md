@@ -34,7 +34,7 @@ _____ 1 pt: Insertion sort for CardPile sorts correctly
 
 _____ 1 pt: Insertion sort for CardPile implemented efficiently
 
-_____ 1 pt: EITHER merge sort OR quicksort for CardPile sorts correctly
+_____ 1 pt: Your chosen advanced sort (EITHER merge sort OR quicksort) sorts correctly
 
 _____ 1 pt: Your chosen advanced sort is implemented efficiently
 
@@ -42,11 +42,11 @@ _____ 1 pt: Used the provided timing harness to benchmark `LinearSearch` and com
 
 _____ 1 pt: Summary of timing results written up in readme
 
-      _____ Reflection discusses which methods would have benefited most from `ArrayList`, and why
+      _____ Reflection discusses pros/cons of ArrayList vs LinkedList for these algorithms
 
-      _____ Reflection explains why binary search is a poor fit for linked lists
+      _____ Reflection explains why we didn't attempt binary search
 
-      _____ Reflection discusses how you avoided duplicating your sorting code for timing runs
+      _____ Reflection discusses relative speed of algorithms and how it matches your expectations
 
 ## Kudos
 
