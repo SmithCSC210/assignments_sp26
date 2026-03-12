@@ -11,10 +11,18 @@ public interface DisplayableMaze {
     /** @return width of maze grid */
     public int getWidth();
 
-    /** @return contents of maze grid at row i, column j */
+    /**
+     * @param i row index
+     * @param j column index
+     * @return contents of maze grid at row i, column j
+     */
     public MazeContents getContents(int i, int j);
 
-    /** @return true if the maze grid is explorable at row i, column j */
+    /**
+     * @param i row index
+     * @param j column index
+     * @return true if the maze grid is explorable at row i, column j
+     */
     public boolean isExplorable(int i, int j);
 
     /** @return location of maze start point */

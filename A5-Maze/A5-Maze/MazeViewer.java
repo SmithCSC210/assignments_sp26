@@ -26,7 +26,11 @@ public class MazeViewer extends JComponent implements ActionListener {
     /** TImer for callbacks */
     private Timer timer;
 
-    /** Creates a viewer to display the specified maze */
+    /**
+     * Creates a viewer to display the specified maze.
+     *
+     * @param maze maze to display
+     */
     public MazeViewer(DisplayableMaze maze) {
         super();
         this.maze = maze;

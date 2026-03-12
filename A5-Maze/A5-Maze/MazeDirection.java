@@ -5,5 +5,14 @@
  *  @version CSC 112, 20 March 2006
  */
 public enum MazeDirection {
-  NORTH, SOUTH, EAST, WEST, NONE;
+  /** North direction. */
+  NORTH,
+  /** South direction. */
+  SOUTH,
+  /** East direction. */
+  EAST,
+  /** West direction. */
+  WEST,
+  /** No direction. */
+  NONE;
 }

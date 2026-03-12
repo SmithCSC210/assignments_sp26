@@ -14,34 +14,59 @@ public class MazeLocation {
   /** The column number */
   private int col;
 
-  /** Constructor from two ints */
+  /**
+   * Constructor from two ints.
+   *
+   * @param row row coordinate
+   * @param col column coordinate
+   */
   public MazeLocation(int row, int col) {
     this.row = row;
     this.col = col;
   }
 
-  /** Copy constructor */
+  /**
+   * Copy constructor.
+   *
+   * @param p location to copy
+   */
   public MazeLocation(MazeLocation p) {
     row = p.row;
     col = p.col;
   }
 
-  /** accessor for the row number */
+  /**
+   * Accessor for the row number.
+   *
+   * @return row coordinate
+   */
   public int getRow() {
     return row;
   }
 
-  /** Accessor for the column number */
+  /**
+   * Accessor for the column number.
+   *
+   * @return column coordinate
+   */
   public int getCol() {
     return col;
   }
 
-  /** Manipulator for the row number */
+  /**
+   * Manipulator for the row number.
+   *
+   * @param row new row coordinate
+   */
   public void setRow(int row) {
     this.row = row;
   }
 
-  /** Manipulator for the column number */
+  /**
+   * Manipulator for the column number.
+   *
+   * @param col new column coordinate
+   */
   public void setCol(int col) {
     this.col = col;
   }

@@ -30,15 +30,17 @@ You should focus on:
 Your first goal is a working `Maze` class.
 
 1. Implement the `DisplayableMaze` interface in `Maze.java`.
-2. Add instance variables needed to represent the maze, including a 2D array:
+2. Add a constructor to `Maze` that takes a filename as a `String` and reads that maze file into the object.
+   - Required form: `public Maze(String filename)`
+3. Add instance variables needed to represent the maze, including a 2D array:
    - `MazeContents[][] mazeGrid`
-3. Implement required getters:
+4. Implement required getters:
    - `getHeight()`
    - `getWidth()`
    - `getContents(int i, int j)`
    - `getStart()`
    - `getFinish()`
-4. Implement `isExplorable(int i, int j)`.
+5. Implement `isExplorable(int i, int j)`.
 
 A location should be explorable only if it is:
 
@@ -91,6 +93,7 @@ Before submission, reduce delay to less than 10 ms (or remove it) so grading run
 ## Phase 3: Read Maze Files
 
 Your program should read a maze file and encode it into `mazeGrid`.
+This file-reading logic should be used by your `Maze(String filename)` constructor.
 
 ### Running from the command line
 
