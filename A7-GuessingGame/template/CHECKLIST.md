@@ -8,44 +8,51 @@ your work, please indicate the status of each item
 - NO: indicates that the item is not attempted
 - PART: indicates that the item is attempted but not fully complete
 
+Note: this checklist covers only the coding part of the assignment (80%).
+You should also make sure that your logic and ideas are clearly expressed to fulfill the prototyping requirement (20%).
 
-## Assignment Points:
+
+## Grade-ability Check
+Please confirm the following minimum criteria are met:
+
+________ Program compiles without errors
+
+________ All required files included with submission (including basic readme info and completed checklist file)
+
+________ README.md contains answers to any questions and your reflection on the assignment
+
+**Assignments that do not meet the above criteria cannot be graded**
+
+
+## Coding Points:
 
 _____ 1 pt: Class DecisionTree is a correctly designed subclass of BinaryTree
 
-_____ 1 pt: Method followPath correctly returns the indicated node of a decision tree
+_____ 2 pts: Method followPath correctly returns the indicated node of a decision tree
 
 _____ 2 pts: Plays a game that moves correctly through the tree to a guess
 
 _____ 2 pts: Correctly updates tree when the program guesses wrong
 
-_____ 1 pt: User interaction is clear and easy to navigate
-
-_____ 1 pt: Implemented method to write tree correctly to file in breadth-first order
-
-_____ 1 pt: Implemented method to read tree correctly from file
-
-_____ 1 pt: Game plays using tree from file and updates it before exiting
+_____ This includes using the tree from the input file, writing updates back to the file, and preserving learned animals across replay and restart.
 
 
-## General Items:
+## Code Hygiene (4 pts):
 
-_____ 4 pts: Program compiles without errors or warnings
+________ 1 pt: No copy/paste near-duplicate code blocks for the same behavior (reusing your code is better for everyone!)
 
-_____ 2 pts: Executes fully & consistently without crashing (exception/freeze)
+________ 1 pt: Common logic is factored into helpers
 
-_____ 2 pt: Complies with style guidelines (missing items 1 pt each):
+________ 1 pt: Methods are short enough to read (no 100-line monster methods unless justified)
 
-      _____ Classes & class members all have Javadoc header comments
+________ 1 pt: Names communicate intent (especially for helper methods)
 
-      _____ Clear and consistent indentation of bracketed sections
+## General Items (6 pts):
 
-      _____ Adheres to Java conventions on naming & capitalization
+________ 1 pt: Student-written code compiles without warnings that indicate correctness problems
 
-      _____ Methods & variables all have clear and accurate names
+________ 2 pts: Student-provided code runs and executes without unexpected crashing
 
-      _____ Methods avoid confusing side effects
+________ 2 pt: Javadoc builds without errors/warnings
 
-_____ 1 pt: All required files included with submission (including completed checklist file)
-
-_____ 1 pt: readme.md contains reflection on the assignment
+________ 1 pt: Indentation and other style norms are followed

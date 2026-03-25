@@ -89,6 +89,8 @@ Your program should learn as it plays, but it's never going to amount to much if
 
 To allow for this, your program should be able to read a decision tree in from a text file when it starts up, and write it out again at the end. The file name will be specified as a command line argument. For this assignment, we will test using a file named `AnimalTree.txt`, so your program should work correctly when run as `java AnimalGuess AnimalTree.txt`.
 
+We will test your program starting from a clean version of `AnimalTree.txt`. We have included that file in the template so you can use the same starting point and make sure your program works correctly before you submit.
+
 If the user provides a relative path such as `AnimalTree.txt` or `data/AnimalTree.txt`, your program should interpret that path relative to the current working directory, meaning the folder from which `java AnimalGuess ...` was run. You do not need to convert relative paths into absolute paths yourself; just pass the filename through to your file-reading and file-writing code consistently.
 
 Do not hardcode a specific filename or folder path in your program. Always read from and write to the exact path provided as the command-line argument.
