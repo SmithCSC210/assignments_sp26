@@ -1,6 +1,6 @@
 # Assignment 7: Decision Trees
 ​
-*This assignment explores an application of binary decision trees. For some background on how decision trees can be used to classify items into categories, I recommend [this chapter](https://www-users.cse.umn.edu/~kumar001/dmbook/ch4.pdf), up through and including section 4.3.1. (Sections 4.3.2 and beyond talk about how to build a decision tree from a preexisting set of data, which is not what we plan to do.)*
+*This assignment explores an application of binary decision trees. For some background on how decision trees can be used to classify items into categories, we recommend [this chapter](https://www-users.cse.umn.edu/~kumar001/dmbook/ch4.pdf), up through and including section 4.3.1. (Sections 4.3.2 and beyond talk about how to build a decision tree from a preexisting set of data, which is not what we plan to do.)*
 
 Decision trees organize information in a hierarchical structure. In class we have focused on hierarchical problems that can be approached with binary search, but other problems can also benefit from the structure provided by binary trees. Specifically, you can use binary trees to make a decision tree that will narrow down options until you reach a single one.
 
@@ -89,6 +89,10 @@ Your program should learn as it plays, but it's never going to amount to much if
 
 To allow for this, your program should be able to read a decision tree in from a text file when it starts up, and write it out again at the end. The file name will be specified as a command line argument. For this assignment, we will test using a file named `AnimalTree.txt`, so your program should work correctly when run as `java AnimalGuess AnimalTree.txt`.
 
+If the user provides a relative path such as `AnimalTree.txt` or `data/AnimalTree.txt`, your program should interpret that path relative to the current working directory, meaning the folder from which `java AnimalGuess ...` was run. You do not need to convert relative paths into absolute paths yourself; just pass the filename through to your file-reading and file-writing code consistently.
+
+Do not hardcode a specific filename or folder path in your program. Always read from and write to the exact path provided as the command-line argument.
+
 The format of the file is one node per line, in breadth-first order for full credit. Each line contains the path string of the node, a space, and the node's value (either a question or an animal name). Here is a simple example:
 
      Is it a mammal?
@@ -126,3 +130,9 @@ Once you have both the reading and the writing, you will call the program as sho
     java AnimalGuess AnimalTree.txt
     
 It will read the tree in to start.  When the user has finished playing the game, your program should write out the tree again using the same file name (overwriting the previous file contents).
+
+## Submission Notes
+
+Be sure to include your completed `CHECKLIST.md` file with your submission.
+
+Also complete `README.md`, including the reflection and the other prompts listed there.

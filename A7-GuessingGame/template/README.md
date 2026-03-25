@@ -1,14 +1,31 @@
 # A7 Guessing Game
 
-Your readme should include the following information. Each student needs to submit all of this information themselves, even when pair programming. 
+Each student should complete this README individually, even when pair programming.
 
-## General Information
-Programming Partner Name (if you'd like to be graded together):
+## Basic Information
 
-Other Collaborators (and kudos to helpful members of the class):
+Your name:
 
-Any references used besides JavaDoc and course materials:
+Programming partner name, if any:
 
-## Assignment Reflection
+Other collaborators, including TAs:
 
-Please reflect on your experience with this assignment. What was most challenging? What was most interesting?
+If anyone was particularly helpful, please give them a shout-out here:
+
+## References
+
+Any references or resources used besides JavaDoc and course materials:
+
+If you used generative AI, how did you use it? What role did it play in your learning?
+
+## Questions to Answer
+
+How does your `DecisionTree` class differ from the base `BinaryTree<String>` class?
+
+How does your program decide whether to move left or right while playing the guessing game?
+
+How does your program update and save what it learned after an incorrect guess?
+
+## Reflection
+
+Please provide a brief reflection on your experience with this assignment. What was most challenging? What was most interesting? What did you learn about representing decisions with trees?
