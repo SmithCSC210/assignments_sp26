@@ -169,6 +169,8 @@ java SpellChecker < sonnet.txt
 
 then your program should read words from `System.in`.
 
+We have provided `sonnet.txt` and `sonnet2.txt` for you to use as test inputs while you work on this mode.
+
 In this mode:
 
 - correctly spelled words should produce no output.
